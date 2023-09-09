@@ -1,0 +1,212 @@
+
+this is a blank template with different background colours and no entities with correct navigation.
+
+
+sidebar:
+  width:
+    mobile: 0
+    tablet: 20
+    desktop: 25
+    breakpoints:
+      mobile: 768
+      tablet: 1024
+  title: Home Tablet
+  digitalClock: true
+  twelveHourVersion: true
+  date: true
+  hideTopMenu: false
+  sidebarMenu:
+    - action: navigate
+      navigation_path: home1
+      name: Home
+      active: true
+    - action: navigate
+      navigation_path: lighting
+      name: Lights
+    - action: navigate
+      navigation_path: sensors
+      name: Sensors
+    - action: navigate
+      navigation_path: media
+      name: Media
+    - action: navigate
+      navigation_path: camera
+      name: Cameras
+    - action: navigate
+      navigation_path: alarm
+      name: Alarm
+    - action: navigate
+      navigation_path: living-room
+      name: Living Room
+    - action: navigate
+      navigation_path: Remote
+      name: Remote Control
+  style: |
+    :host {
+        --sidebar-background: #1a2636;
+        --sidebar-text-color: #FFF;
+        --face-color: #FFF;
+        --face-border-color: #FFF;
+        --clock-hands-color: #2b374e;
+        --clock-seconds-hand-color: #FF4B3E;
+        --clock-middle-background: #FFF;
+        --clock-middle-border: #000;  
+        text-align: center;
+    }        
+
+    .digitalClock {
+        text-align: center;
+        padding-bottom: 1px;
+        padding-top: 20px;
+        font-size:60px!important;
+        line-height: 60px;        
+    }   
+    .date {
+        text-align: center;
+        padding-bottom: 1px;
+        font-size:30px!important;
+        line-height: 60px;        
+    }     
+  bottomCard:
+    type: vertical-stack
+    cardOptions:
+      cards:
+        - type: vertical-stack
+          cards:
+            - type: horizontal-stack
+              cards:
+                - type: custom:button-card
+                  tap_action:
+                    action: toggle
+                  entity: script.play_pause_kitchen_echo
+                  icon: mdi:play-pause
+                  show_icon: true
+                  show_state: false
+                  name: false
+                  show_name: false
+                  styles:
+                    icon:
+                      - width: 50%
+                      - color: white
+                    card:
+                      - padding-top: 20px
+                - type: custom:button-card
+                  entity: light.kitchen_lights_all
+                  icon: mdi:restart
+                  show_icon: true
+                  show_state: false
+                  name: false
+                  show_name: false
+                  styles:
+                    icon:
+                      - width: 50%
+                      - color: white
+                    card:
+                      - padding-top: 20px
+            - type: horizontal-stack
+              cards:
+                - type: custom:button-card
+                  tap_action:
+                    action: toggle
+                  entity: script.echo_volume_down
+                  icon: mdi:volume-minus
+                  show_icon: true
+                  show_state: false
+                  name: false
+                  show_name: false
+                  styles:
+                    icon:
+                      - width: 50%
+                      - color: white
+                    card:
+                      - padding-top: 20px
+                - type: custom:button-card
+                  tap_action:
+                    action: toggle
+                  entity: script.echo_volume_up
+                  icon: mdi:volume-plus
+                  show_icon: true
+                  show_state: false
+                  name: false
+                  show_name: false
+                  styles:
+                    icon:
+                      - width: 50%
+                      - color: white
+                    card:
+                      - padding-top: 20px
+      cardStyle: |
+        :host {
+          width: 100%;
+          background-color:#FFF;
+        }
+kiosk_mode:
+  hide_header: false
+  mobile_settings:
+    hide_header: true
+views:
+  - theme: ios-dark-mode
+    title: Home1
+    icon: mdi:home
+    path: Home1
+    badges: []
+    cards: []
+  - theme: ios-dark-mode-dark-blue
+    title: Lights
+    path: lighting
+    icon: mdi:lightbulb-multiple
+    type: sidebar
+    badges: []
+    cards: []
+  - theme: ios-light-mode-dark-blue-alternative
+    title: Sensors
+    path: sensors
+    icon: mdi:motion-sensor
+    type: sidebar
+    badges: []
+    cards: []
+  - theme: ios-dark-mode-dark-green
+    title: Media
+    path: media
+    icon: mdi:music-box-multiple-outline
+    badges: []
+    cards: []
+  - theme: ios-dark-mode-light-blue
+    title: Cameras
+    path: camera
+    icon: mdi:cctv
+    type: panel
+    badges: []
+    cards: []
+  - theme: noctis
+    title: Alarm
+    path: alarm
+    icon: mdi:alarm-panel
+    badges: []
+    cards: []
+  - theme: ios-light-mode-blue-red
+    title: Living Room
+    path: living-room
+    icon: mdi:sofa-single
+    badges: []
+    cards: []
+  - theme: ios-dark-mode-orange
+    title: Remote Control
+    path: Remote
+    icon: mdi:remote-tv
+    badges: []
+    cards: []
+  - title: Main door
+    path: main-door
+    type: panel
+    icon: mdi:doorbell-video
+    theme: ios-light-mode-light-green
+    badges: []
+    cards: []
+  - title: Test
+    path: test
+    icon: mdi:test-tube
+    subview: false
+    theme: sundown
+    badges: []
+    cards: []
